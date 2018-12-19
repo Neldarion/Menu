@@ -34,3 +34,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         this.affiche.setText(String.valueOf(memoire));
     }
 }
+//----------------------------
+//popup_menu.xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/reset"
+        android:title="Reset"
+        />
+    <item android:id="@+id/quitter"
+        android:title="Quitter"
+        />
+</menu>
