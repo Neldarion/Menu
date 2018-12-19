@@ -1,0 +1,36 @@
+
+public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
+
+    public void showPopup(View view){
+        PopupMenu popup = new PopupMenu(this, view);
+        popup.setOnMenuItemClickListener(this);
+        popup.inflate(R.menu.popup_menu);
+        popup.show();
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.quitter:
+                finish();break;
+            case R.id.reset:
+                affiche.setText("0");
+                memoire = 0;break;
+
+        }
+        return true;
+    }
+
+
+    public void add1(View view) {
+        button.setOnLongClickListener(new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View view){
+                showPopup(view);
+                return true;
+            }
+        });
+        memoire ++;
+        this.affiche.setText(String.valueOf(memoire));
+    }
+}
